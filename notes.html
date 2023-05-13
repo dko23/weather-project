@@ -1,0 +1,43 @@
+//Web APIs usually provide access to resources and functionality such as databases, files, hardware, and other services. They use standard protocols such as HTTP and REST to receive requests from clients, process them on the server, and return responses in a structured format such as JSON or XML.
+Specifically, an API in JavaScript typically refers to a web API, which is an interface that allows web applications to communicate with remote servers over the internet.
+
+
+fetch(): The fetch() method starts the process of fetching a resource from a server. The fetch() method returns a Promise that resolves to a Response object
+A Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+Promises have two main methods:
+
+then(): This method is called when the promise is resolved successfully (i.e., when it transitions to the fulfilled state) and takes a callback function that will receive the resolved value as its argument.
+catch(): This method is called when the promise is rejected (i.e., when it transitions to the rejected state) and takes a callback function that will receive the reason (i.e., error object) for the rejection.
+Here's an example of creating a Promise object and using then() and catch() methods to handle the resolved and rejected states:
+
+
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const randomNumber = Math.floor(Math.random() * 10);
+    if (randomNumber % 2 === 0) {
+      resolve(randomNumber);
+    } else {
+      reject(new Error('Failed to generate a random even number'));
+    }
+  }, 1000);
+});
+
+promise.then((result) => {
+  console.log(`Resolved with result: ${result}`);
+}).catch((error) => {
+  console.error(`Rejected with error: ${error}`);
+});
+In this example, we create a Promise object that resolves to a random even number after a delay of one second. If the number is odd, the promise is rejected with an error message. We use the then() and catch() methods to handle the resolved and rejected states of the Promise, respectively.
+
+So, in summary, a Promise object is a container for an eventual value that represents the result of an asynchronous operation, and it provides methods to handle the fulfillment or rejection of the Promise.
+
+
+
+
+
+
+
+
+
+APi key 6413ef10d7623e690ec6320b67910769
